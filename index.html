@@ -79,7 +79,7 @@
     textarea { min-height:112px; resize:vertical; }
     .hint { color:var(--muted); font-size:.8rem; margin-top:-9px; }
     .form-note { color:var(--muted); font-size:.8rem; margin:12px 0 0; }
-    .form-status { margin-top:12px; font-size:.9rem; color:var(--green); font-weight:700; }
+    .form-status { margin-top:12px; font-size:.9rem; color:var(--green); font-weight:700; }\n    #emailChoices { margin-top:14px; padding:16px; border:1px solid var(--line); border-radius:12px; background:var(--soft); }\n    #emailChoices[hidden] { display:none; }\n    .email-choice-buttons { display:flex; flex-wrap:wrap; gap:10px; }\n    .email-choice-buttons .btn { text-align:center; }
     .faq { max-width:780px; margin:auto; }
     details { background:white; border:1px solid var(--line); border-radius:12px; padding:17px 20px; margin:10px 0; }
     summary { cursor:pointer; font-weight:750; color:var(--navy); }
@@ -183,7 +183,7 @@
             <div class="field"><label for="notes">Additional details</label><textarea id="notes" name="notes" placeholder="Mention your deadline, current resume status, education, skills or questions. Please don't enter passwords, ID numbers or other sensitive information."></textarea></div>
             <button class="btn" type="submit" style="width:100%">Continue to email order</button>
             <p class="form-note">This demo form does not upload or store your information. It opens your email app with a pre-filled draft. You must review and press Send yourself. Do not email sensitive identity documents.</p>
-            <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+            <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>\n            <div id="emailChoices" hidden></div>
           </form>
         </div>
       </div>
@@ -246,8 +246,35 @@
         '',
         'Thank you.'
       ].join('\n');
-      document.getElementById('formStatus').textContent = 'Your email draft is being opened. Review it and press Send to submit your enquiry.';
-      window.location.href = `mailto:prabhatmalviya47@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const recipient = 'prabhatmalviya47@gmail.com';
+      const encodedSubject = encodeURIComponent(subject);
+      const encodedBody = encodeURIComponent(body);
+      const mailtoUrl = `mailto:${recipient}?subject=${encodedSubject}&body=${encodedBody}`;
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${encodedSubject}&body=${encodedBody}`;
+      const outlookUrl = `https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(recipient)}&subject=${encodedSubject}&body=${encodedBody}`;
+      const status = document.getElementById('formStatus');
+      const choices = document.getElementById('emailChoices');
+
+      // Phones/tablets use the device's configured email app.
+      const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        status.textContent = 'Opening your device email app. Review the draft and press Send to submit your enquiry.';
+        window.location.href = mailtoUrl;
+      } else {
+        status.textContent = 'Choose your email service. Your order details are ready in the draft.';
+        choices.hidden = false;
+        choices.innerHTML = `
+          <p><strong>Choose how to send your order:</strong></p>
+          <div class="email-choice-buttons">
+            <a class="btn" href="${gmailUrl}" target="_blank" rel="noopener">Open Gmail</a>
+            <a class="btn" href="${outlookUrl}" target="_blank" rel="noopener">Open Outlook</a>
+            <a class="btn secondary" href="${mailtoUrl}">Default email app</a>
+          </div>
+          <p class="form-note">Review the message and press Send in your email service. This website does not send the email automatically.</p>
+        `;
+        choices.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
     });
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>

@@ -129,19 +129,19 @@
         <div class="cards">
           <article class="price-card">
             <h3>Basic Resume</h3><div class="desc">A neat, readable format for a simple fresher resume.</div>
-            <div class="price">₹50 <small>/ resume</small></div>
+            <div class="price">₹19 <small>/ resume</small></div>
             <ul class="features"><li>Clean resume formatting</li><li>Student / fresher layout</li><li>PDF + Word files</li><li>One minor revision</li></ul>
             <button class="btn secondary choose" data-package="Basic Resume">Choose Basic</button>
           </article>
           <article class="price-card featured">
             <span class="popular">POPULAR</span><h3>Professional Resume</h3><div class="desc">A polished layout with clearer sections and stronger presentation.</div>
-            <div class="price">₹80 <small>/ resume</small></div>
+            <div class="price">₹49 <small>/ resume</small></div>
             <ul class="features"><li>Modern professional design</li><li>Section organization</li><li>PDF + editable Word files</li><li>One minor revision</li></ul>
             <button class="btn choose" data-package="Professional Resume">Choose Professional</button>
           </article>
           <article class="price-card">
             <h3>Premium Resume</h3><div class="desc">A more tailored resume for a specific internship or job role.</div>
-            <div class="price">₹100 <small>/ resume</small></div>
+            <div class="price">₹65 <small>/ resume</small></div>
             <ul class="features"><li>Role-focused formatting</li><li>Content presentation review</li><li>PDF + editable Word files</li><li>One minor revision</li></ul>
             <button class="btn secondary choose" data-package="Premium Resume">Choose Premium</button>
           </article>
@@ -168,7 +168,7 @@
             <h3>Let's build your next-step resume.</h3>
             <p>For college students, recent graduates and internship applicants.</p>
             <p>You'll receive PDF + editable Word files. We'll confirm the details and delivery timeline by email before beginning.</p>
-            <div class="contact"><strong>Email</strong><br><a href="mailto:prabhatmalviya47@gmail.com">prabhatmalviya47@gmail.com</a><br><br><strong>Typical starting price</strong><br>₹50</div>
+            <div class="contact"><strong>Email</strong><br><a href="mailto:prabhatmalviya47@gmail.com">prabhatmalviya47@gmail.com</a><br><br><strong>Typical starting price</strong><br>₹19</div>
           </aside>
           <form id="orderForm">
             <div class="form-grid">
@@ -176,7 +176,7 @@
               <div class="field"><label for="email">Your email *</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
             </div>
             <div class="form-grid">
-              <div class="field"><label for="package">Choose a package *</label><select id="package" name="package" required><option value="">Select a package</option><option value="Basic Resume — ₹50">Basic Resume — ₹50</option><option value="Professional Resume — ₹80">Professional Resume — ₹80</option><option value="Premium Resume — ₹100">Premium Resume — ₹100</option></select></div>
+              <div class="field"><label for="package">Choose a package *</label><select id="package" name="package" required><option value="">Select a package</option><option value="Basic Resume — ₹19">Basic Resume — ₹19</option><option value="Professional Resume — ₹49">Professional Resume — ₹49</option><option value="Premium Resume — ₹65">Premium Resume — ₹65</option></select></div>
               <div class="field"><label for="role">Target role / course *</label><input id="role" name="role" required placeholder="e.g. Software Intern, B.Com Fresher"></div>
             </div>
             <div class="field"><label for="background">What do you need help with?</label><select id="background" name="background"><option>Format my existing resume</option><option>Create a resume from my details</option><option>Improve my resume for a specific role</option><option>I'm not sure — please guide me</option></select></div>
@@ -210,9 +210,9 @@
       button.addEventListener('click', () => {
         const name = button.dataset.package;
         const values = {
-          'Basic Resume': 'Basic Resume — ₹50',
-          'Professional Resume': 'Professional Resume — ₹80',
-          'Premium Resume': 'Premium Resume — ₹100'
+          'Basic Resume': 'Basic Resume — ₹19',
+          'Professional Resume': 'Professional Resume — ₹49',
+          'Premium Resume': 'Premium Resume — ₹65'
         };
         packageSelect.value = values[name];
         document.getElementById('order').scrollIntoView({ behavior: 'smooth' });

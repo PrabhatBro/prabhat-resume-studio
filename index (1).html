@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Affordable, professional resume formatting for college students and freshers. PDF and editable Word delivery.">
+  <title>Prabhat Resume Studio | Resumes for Students & Freshers</title>
+  <style>
+    :root {
+      --navy: #14213d; --blue: #3157d5; --blue-dark: #2445b5;
+      --ink: #1d2638; --muted: #667085; --line: #e6eaf1;
+      --paper: #ffffff; --soft: #f5f7fc; --green: #16845b;
+      --shadow: 0 18px 50px rgba(20,33,61,.09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--paper); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { background: var(--navy); color: #dce5ff; font-size: .86rem; padding: 9px 0; }
+    .topbar .container { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    nav { min-height: 76px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:flex; align-items:center; gap:11px; font-weight:800; letter-spacing:-.03em; color:var(--navy); }
+    .brand-mark { width:40px; height:40px; display:grid; place-items:center; border-radius:12px; background:var(--blue); color:white; font-weight:900; }
+    .navlinks { display:flex; align-items:center; gap:26px; color:#4b5567; font-size:.94rem; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; border:0; border-radius:11px; padding:12px 19px; background:var(--blue); color:white; font-weight:700; cursor:pointer; transition:.2s; font:inherit; font-weight:700; }
+    .btn:hover { background:var(--blue-dark); transform:translateY(-1px); }
+    .btn.secondary { background:white; color:var(--navy); border:1px solid #d9dfeb; }
+    .hero { background: radial-gradient(circle at 82% 15%, #e6ecff 0, transparent 32%), linear-gradient(135deg,#f7f9ff,#fff 65%); padding:82px 0 76px; overflow:hidden; }
+    .hero-grid { display:grid; grid-template-columns:1.12fr .88fr; align-items:center; gap:54px; }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; color:var(--blue); background:#eaf0ff; padding:7px 12px; border-radius:99px; font-size:.82rem; font-weight:800; }
+    h1 { color:var(--navy); font-size:clamp(2.5rem,5vw,4.45rem); letter-spacing:-.055em; line-height:1.06; margin:20px 0; }
+    h1 span { color:var(--blue); }
+    .hero p { color:var(--muted); font-size:1.12rem; max-width:590px; margin:0 0 27px; }
+    .hero-actions { display:flex; gap:12px; flex-wrap:wrap; }
+    .trust { display:flex; gap:20px; flex-wrap:wrap; margin-top:27px; color:#596579; font-size:.9rem; }
+    .trust span::before { content:"✓"; color:var(--green); font-weight:900; margin-right:7px; }
+    .resume-preview { background:white; border:1px solid #e5e9f2; box-shadow:var(--shadow); border-radius:18px; padding:22px; transform:rotate(2deg); max-width:390px; margin:auto; }
+    .paper { min-height:390px; border:1px solid #e8ebf1; padding:27px; box-shadow:0 6px 20px rgba(0,0,0,.04); }
+    .paper h3 { margin:0; color:var(--navy); font-size:1.4rem; letter-spacing:.04em; }
+    .paper .role { color:var(--blue); font-size:.7rem; font-weight:800; letter-spacing:.12em; margin:2px 0 15px; }
+    .paper-line { height:5px; border-radius:5px; background:#e9edf5; margin:8px 0; }
+    .paper-line.short { width:55%; } .paper-line.mid { width:78%; }
+    .paper-heading { color:var(--navy); font-size:.68rem; font-weight:900; letter-spacing:.12em; border-bottom:2px solid #dfe5f2; padding:13px 0 5px; }
+    .section { padding:78px 0; }
+    .section.soft { background:var(--soft); }
+    .section-head { text-align:center; max-width:650px; margin:0 auto 40px; }
+    .section-head h2 { color:var(--navy); font-size:clamp(1.9rem,3.5vw,2.7rem); line-height:1.15; letter-spacing:-.04em; margin:0 0 12px; }
+    .section-head p { color:var(--muted); margin:0; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:stretch; }
+    .price-card { background:white; border:1px solid var(--line); border-radius:18px; padding:26px; box-shadow:0 7px 25px rgba(20,33,61,.035); display:flex; flex-direction:column; position:relative; }
+    .price-card.featured { border:2px solid var(--blue); box-shadow:var(--shadow); }
+    .popular { position:absolute; top:-13px; right:20px; background:var(--blue); color:white; font-size:.72rem; font-weight:800; border-radius:99px; padding:5px 11px; }
+    .price-card h3 { margin:0 0 5px; color:var(--navy); font-size:1.2rem; }
+    .price-card .desc { color:var(--muted); font-size:.9rem; min-height:48px; }
+    .price { font-size:2.45rem; font-weight:850; color:var(--navy); letter-spacing:-.05em; margin:13px 0 16px; }
+    .price small { font-size:.85rem; color:var(--muted); font-weight:500; letter-spacing:0; }
+    .features { list-style:none; padding:0; margin:0 0 24px; color:#4e596b; font-size:.92rem; flex:1; }
+    .features li { margin:9px 0; }
+    .features li::before { content:"✓"; color:var(--green); font-weight:900; margin-right:9px; }
+    .price-card .btn { width:100%; }
+    .how-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .step { padding:24px; background:white; border:1px solid var(--line); border-radius:16px; }
+    .step-num { width:36px; height:36px; display:grid; place-items:center; border-radius:11px; color:var(--blue); background:#eaf0ff; font-weight:900; }
+    .step h3 { color:var(--navy); margin:15px 0 5px; }
+    .step p { color:var(--muted); margin:0; font-size:.94rem; }
+    .order-wrap { display:grid; grid-template-columns:.75fr 1.25fr; gap:34px; align-items:start; }
+    .order-info { background:var(--navy); color:white; border-radius:18px; padding:30px; }
+    .order-info h3 { font-size:1.55rem; margin:0 0 10px; }
+    .order-info p { color:#c7d1e8; }
+    .order-info .contact { margin-top:25px; padding-top:20px; border-top:1px solid #3b4965; overflow-wrap:anywhere; }
+    form { background:white; border:1px solid var(--line); border-radius:18px; padding:30px; box-shadow:var(--shadow); }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:17px; }
+    .field { display:flex; flex-direction:column; gap:7px; margin-bottom:17px; }
+    label { color:#344054; font-size:.88rem; font-weight:700; }
+    input, select, textarea { width:100%; border:1px solid #d8deea; border-radius:10px; padding:12px 13px; font:inherit; color:var(--ink); background:white; outline:none; }
+    input:focus, select:focus, textarea:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(49,87,213,.12); }
+    textarea { min-height:112px; resize:vertical; }
+    .hint { color:var(--muted); font-size:.8rem; margin-top:-9px; }
+    .form-note { color:var(--muted); font-size:.8rem; margin:12px 0 0; }
+    .form-status { margin-top:12px; font-size:.9rem; color:var(--green); font-weight:700; }\n    #emailChoices { margin-top:14px; padding:16px; border:1px solid var(--line); border-radius:12px; background:var(--soft); }\n    #emailChoices[hidden] { display:none; }\n    .email-choice-buttons { display:flex; flex-wrap:wrap; gap:10px; }\n    .email-choice-buttons .btn { text-align:center; }
+    .faq { max-width:780px; margin:auto; }
+    details { background:white; border:1px solid var(--line); border-radius:12px; padding:17px 20px; margin:10px 0; }
+    summary { cursor:pointer; font-weight:750; color:var(--navy); }
+    details p { color:var(--muted); margin-bottom:0; }
+    footer { background:#101b32; color:#c7d1e8; padding:32px 0; }
+    footer .container { display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; font-size:.88rem; }
+    footer strong { color:white; }
+    @media(max-width:850px) { .hero-grid,.order-wrap { grid-template-columns:1fr; } .resume-preview { max-width:340px; } .cards { grid-template-columns:1fr; max-width:520px; margin:auto; gap:24px; } .how-grid { grid-template-columns:1fr; } .navlinks { gap:13px; } }
+    @media(max-width:600px) { .container { width:min(100% - 28px,1120px); } .topbar .container { justify-content:center; text-align:center; } nav { min-height:66px; } .navlinks a:not(.btn) { display:none; } .hero { padding:58px 0; } .section { padding:58px 0; } form,.order-info { padding:22px; } .form-grid { grid-template-columns:1fr; gap:0; } }
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container"><span>Resume support for college students & freshers</span><span>PDF + editable Word delivery</span></div></div>
+  <header>
+    <nav class="container">
+      <a class="brand" href="#home"><span class="brand-mark">P</span><span>Prabhat Resume Studio</span></a>
+      <div class="navlinks"><a href="#services">Packages</a><a href="#how">How it works</a><a class="btn" href="#order">Order a resume</a></div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">✦ Made for students & freshers</span>
+          <h1>Your next opportunity starts with a <span>better resume.</span></h1>
+          <p>Get a clean, professional resume that presents your education, skills and projects clearly. Simple packages, student-friendly pricing and delivery in PDF + editable Word format.</p>
+          <div class="hero-actions"><a class="btn" href="#order">Get my resume</a><a class="btn secondary" href="#services">View packages</a></div>
+          <div class="trust"><span>Student-friendly pricing</span><span>PDF + Word</span><span>One minor revision included</span></div>
+        </div>
+        <div class="resume-preview" aria-label="Illustrative resume preview">
+          <div class="paper">
+            <h3>YOUR NAME</h3><div class="role">GRADUATE • YOUR SPECIALIZATION</div>
+            <div class="paper-line mid"></div><div class="paper-line short"></div>
+            <div class="paper-heading">PROFILE</div><div class="paper-line"></div><div class="paper-line mid"></div>
+            <div class="paper-heading">EDUCATION</div><div class="paper-line mid"></div><div class="paper-line short"></div>
+            <div class="paper-heading">SKILLS</div><div class="paper-line"></div><div class="paper-line mid"></div>
+            <div class="paper-heading">PROJECTS & EXPERIENCE</div><div class="paper-line"></div><div class="paper-line mid"></div><div class="paper-line short"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head"><h2>Choose a package that fits</h2><p>Clear introductory prices for students and freshers. Every package includes PDF and editable Word delivery.</p></div>
+        <div class="cards">
+          <article class="price-card">
+            <h3>Basic Resume</h3><div class="desc">A neat, readable format for a simple fresher resume.</div>
+            <div class="price">₹50 <small>/ resume</small></div>
+            <ul class="features"><li>Clean resume formatting</li><li>Student / fresher layout</li><li>PDF + Word files</li><li>One minor revision</li></ul>
+            <button class="btn secondary choose" data-package="Basic Resume">Choose Basic</button>
+          </article>
+          <article class="price-card featured">
+            <span class="popular">POPULAR</span><h3>Professional Resume</h3><div class="desc">A polished layout with clearer sections and stronger presentation.</div>
+            <div class="price">₹80 <small>/ resume</small></div>
+            <ul class="features"><li>Modern professional design</li><li>Section organization</li><li>PDF + editable Word files</li><li>One minor revision</li></ul>
+            <button class="btn choose" data-package="Professional Resume">Choose Professional</button>
+          </article>
+          <article class="price-card">
+            <h3>Premium Resume</h3><div class="desc">A more tailored resume for a specific internship or job role.</div>
+            <div class="price">₹100 <small>/ resume</small></div>
+            <ul class="features"><li>Role-focused formatting</li><li>Content presentation review</li><li>PDF + editable Word files</li><li>One minor revision</li></ul>
+            <button class="btn secondary choose" data-package="Premium Resume">Choose Premium</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="how">
+      <div class="container">
+        <div class="section-head"><h2>Simple from start to finish</h2><p>Share your details, confirm the order and receive your files.</p></div>
+        <div class="how-grid">
+          <div class="step"><div class="step-num">01</div><h3>Send your details</h3><p>Tell us your target role, education, skills, projects and any experience to include.</p></div>
+          <div class="step"><div class="step-num">02</div><h3>Confirm the package</h3><p>We will confirm the scope, price and expected delivery time before starting.</p></div>
+          <div class="step"><div class="step-num">03</div><h3>Receive your resume</h3><p>Get your completed resume in PDF and editable Word formats, with one minor revision.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="order">
+      <div class="container">
+        <div class="section-head"><h2>Place your resume order</h2><p>Complete the form below. It will open an email draft with your order details for you to review and send.</p></div>
+        <div class="order-wrap">
+          <aside class="order-info">
+            <h3>Let's build your next-step resume.</h3>
+            <p>For college students, recent graduates and internship applicants.</p>
+            <p>You'll receive PDF + editable Word files. We'll confirm the details and delivery timeline by email before beginning.</p>
+            <div class="contact"><strong>Email</strong><br><a href="mailto:prabhatmalviya47@gmail.com">prabhatmalviya47@gmail.com</a><br><br><strong>Typical starting price</strong><br>₹50</div>
+          </aside>
+          <form id="orderForm">
+            <div class="form-grid">
+              <div class="field"><label for="name">Your name *</label><input id="name" name="name" autocomplete="name" required placeholder="Enter your full name"></div>
+              <div class="field"><label for="email">Your email *</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+            </div>
+            <div class="form-grid">
+              <div class="field"><label for="package">Choose a package *</label><select id="package" name="package" required><option value="">Select a package</option><option value="Basic Resume — ₹50">Basic Resume — ₹50</option><option value="Professional Resume — ₹80">Professional Resume — ₹80</option><option value="Premium Resume — ₹100">Premium Resume — ₹100</option></select></div>
+              <div class="field"><label for="role">Target role / course *</label><input id="role" name="role" required placeholder="e.g. Software Intern, B.Com Fresher"></div>
+            </div>
+            <div class="field"><label for="background">What do you need help with?</label><select id="background" name="background"><option>Format my existing resume</option><option>Create a resume from my details</option><option>Improve my resume for a specific role</option><option>I'm not sure — please guide me</option></select></div>
+            <div class="field"><label for="notes">Additional details</label><textarea id="notes" name="notes" placeholder="Mention your deadline, current resume status, education, skills or questions. Please don't enter passwords, ID numbers or other sensitive information."></textarea></div>
+            <button class="btn" type="submit" style="width:100%">Continue to email order</button>
+            <p class="form-note">This demo form does not upload or store your information. It opens your email app with a pre-filled draft. You must review and press Send yourself. Do not email sensitive identity documents.</p>
+            <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>\n            <div id="emailChoices" hidden></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <div class="section-head"><h2>Frequently asked questions</h2><p>A few details before you place an order.</p></div>
+        <div class="faq">
+          <details><summary>Will I receive both PDF and Word files?</summary><p>Yes. Each listed package includes a PDF copy and an editable Word (.docx) copy.</p></details>
+          <details><summary>Can you make a resume if I have no work experience?</summary><p>Yes. A fresher resume can focus on education, projects, coursework, skills, volunteering and relevant activities that you actually completed.</p></details>
+          <details><summary>Do you guarantee an interview or job?</summary><p>No. A resume can help present your background clearly, but interviews and hiring decisions are made by employers.</p></details>
+          <details><summary>How does the order form work?</summary><p>It opens a pre-filled email draft addressed to Prabhat Resume Studio. Review the details and send it to submit your enquiry. Your order is not confirmed until the service provider replies.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container"><div><strong>Prabhat Resume Studio</strong><br>Professional resumes for students & freshers.</div><div>Contact: <a href="mailto:prabhatmalviya47@gmail.com">prabhatmalviya47@gmail.com</a><br>© <span id="year"></span> Prabhat Resume Studio</div></div></footer>
+
+  <script>
+    const packageSelect = document.getElementById('package');
+    document.querySelectorAll('.choose').forEach(button => {
+      button.addEventListener('click', () => {
+        const name = button.dataset.package;
+        const values = {
+          'Basic Resume': 'Basic Resume — ₹50',
+          'Professional Resume': 'Professional Resume — ₹80',
+          'Premium Resume': 'Premium Resume — ₹100'
+        };
+        packageSelect.value = values[name];
+        document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('name').focus({ preventScroll: true });
+      });
+    });
+
+    document.getElementById('orderForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const form = new FormData(event.currentTarget);
+      const name = form.get('name').trim();
+      const email = form.get('email').trim();
+      const packageName = form.get('package');
+      const role = form.get('role').trim();
+      if (!name || !email || !packageName || !role) return;
+
+      const subject = `Resume order enquiry - ${name}`;
+      const body = [
+        'Hello Prabhat Resume Studio,',
+        '',
+        'I would like to enquire about a resume order.',
+        '',
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Package: ${packageName}`,
+        `Target role / course: ${role}`,
+        `Help needed: ${form.get('background')}`,
+        `Additional details: ${form.get('notes') || 'Not provided'}`,
+        '',
+        'Please confirm the next steps, final price and expected delivery time.',
+        '',
+        'Thank you.'
+      ].join('\n');
+      const recipient = 'prabhatmalviya47@gmail.com';
+      const encodedSubject = encodeURIComponent(subject);
+      const encodedBody = encodeURIComponent(body);
+      const mailtoUrl = `mailto:${recipient}?subject=${encodedSubject}&body=${encodedBody}`;
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${encodedSubject}&body=${encodedBody}`;
+      const outlookUrl = `https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(recipient)}&subject=${encodedSubject}&body=${encodedBody}`;
+      const status = document.getElementById('formStatus');
+      const choices = document.getElementById('emailChoices');
+
+      // Phones/tablets use the device's configured email app.
+      const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        status.textContent = 'Opening your device email app. Review the draft and press Send to submit your enquiry.';
+        window.location.href = mailtoUrl;
+      } else {
+        status.textContent = 'Choose your email service. Your order details are ready in the draft.';
+        choices.hidden = false;
+        choices.innerHTML = `
+          <p><strong>Choose how to send your order:</strong></p>
+          <div class="email-choice-buttons">
+            <a class="btn" href="${gmailUrl}" target="_blank" rel="noopener">Open Gmail</a>
+            <a class="btn" href="${outlookUrl}" target="_blank" rel="noopener">Open Outlook</a>
+            <a class="btn secondary" href="${mailtoUrl}">Default email app</a>
+          </div>
+          <p class="form-note">Review the message and press Send in your email service. This website does not send the email automatically.</p>
+        `;
+        choices.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
